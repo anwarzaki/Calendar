@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { 
-  startOfMonth, 
-  endOfMonth, 
+import { useState } from "react";
+import {
+  startOfMonth,
+  endOfMonth,
   eachDayOfInterval,
   addMonths,
   subMonths,
   isSameDay,
   format,
-  getDay
-} from 'date-fns';
+  getDay,
+} from "date-fns";
 
 export default function useCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -20,7 +20,7 @@ export default function useCalendar() {
   const navigate = {
     next: () => setCurrentDate(addMonths(currentDate, 1)),
     prev: () => setCurrentDate(subMonths(currentDate, 1)),
-    today: () => setCurrentDate(new Date())
+    today: () => setCurrentDate(new Date()),
   };
 
   return {
@@ -29,6 +29,6 @@ export default function useCalendar() {
     startDayIndex,
     navigate,
     isCurrentDay: (day) => isSameDay(day, new Date()),
-    formatDate: (date) => format(date, 'MMMM yyyy')
+    formatDate: (date) => format(date, "MMMM yyyy"),
   };
 }

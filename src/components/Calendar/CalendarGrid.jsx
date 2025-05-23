@@ -1,10 +1,18 @@
-import DayCell from './DayCell';
+import DayCell from "./DayCell";
 
-export default function CalendarGrid({ days, events, startDayIndex, isCurrentDay }) {
+export default function CalendarGrid({
+  days,
+  events,
+  startDayIndex,
+  isCurrentDay,
+}) {
   return (
     <div className="grid grid-cols-7 bg-gray-50">
-      {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-        <div key={day} className="py-2 text-center font-medium text-gray-600 bg-gray-100">
+      {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+        <div
+          key={day}
+          className="py-2 text-center font-medium text-gray-600 bg-gray-100"
+        >
           {day}
         </div>
       ))}

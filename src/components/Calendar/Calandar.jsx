@@ -1,8 +1,8 @@
-import useCalendar from '../../hooks/useCalendar';
-import CalendarHeader from './CalendarHeader';
-import CalendarGrid from './CalendarGrid';
-import { groupEventsByDate } from '../../utils/eventUtils';
-import { events } from '../../data/events';
+import useCalendar from "../../hooks/useCalendar";
+import CalendarHeader from "./CalendarHeader";
+import CalendarGrid from "./CalendarGrid";
+import { groupEventsByDate } from "../../utils/eventUtils";
+import { events } from "../../data/events";
 
 export default function Calendar() {
   const {
@@ -11,7 +11,7 @@ export default function Calendar() {
     startDayIndex,
     navigate,
     isCurrentDay,
-    formatDate
+    formatDate,
   } = useCalendar();
 
   const groupedEvents = groupEventsByDate(events);
