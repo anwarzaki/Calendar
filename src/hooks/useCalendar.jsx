@@ -7,13 +7,11 @@ import {
   subMonths,
   isSameDay,
   format,
-  getDay,
-  parseISO
+  getDay
 } from 'date-fns';
 
 export default function useCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
-
   const monthStart = startOfMonth(currentDate);
   const monthEnd = endOfMonth(currentDate);
   const daysInMonth = eachDayOfInterval({ start: monthStart, end: monthEnd });
@@ -27,7 +25,6 @@ export default function useCalendar() {
 
   return {
     currentDate,
-    monthStart,
     daysInMonth,
     startDayIndex,
     navigate,

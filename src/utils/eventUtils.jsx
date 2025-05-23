@@ -7,6 +7,15 @@ export function groupEventsByDate(events) {
   }, {});
 }
 
-export function formatEventTime(startTime, endTime) {
-  return `${startTime} - ${endTime}`;
+export function hasTimeConflict(events) {
+  if (events.length < 2) return false;
+  
+  const sorted = [...events].sort((a, b) => a.startTime.localeCompare(b.startTime));
+  
+  for (let i = 1; i < sorted.length; i++) {
+    if (sorted[i].startTime < sorted[i-1].endTime) {
+      return true;
+    }
+  }
+  return false;
 }

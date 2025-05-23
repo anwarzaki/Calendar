@@ -1,4 +1,9 @@
-export default function CalendarHeader({ monthTitle, onPrev, onNext, onToday }) {
+export default function CalendarHeader({
+  monthTitle,
+  onPrev,
+  onNext,
+  onToday,
+}) {
   return (
     <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 border-b border-gray-200">
       <button
